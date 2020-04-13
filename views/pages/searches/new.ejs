@@ -4,31 +4,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book App</title>
-
+    <title>book-app</title>
+    <link rel="stylesheet" href="/styles/reset.css" type="text/css">
+    <link rel="stylesheet" href="/styles/base.css" type="text/css">
+    <link rel="stylesheet" href="/styles/theme.css" type="text/css">
+    <link rel="stylesheet" href="/styles/icons.css" type="text/css">
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css">
+    <link rel="stylesheet" href="/styles/modules.css" type="text/css">
 </head>
 
 <body>
     <header>
-        <h1>Search by Title or Author</h1>
+        <div id="logo">
+            <h1>My Library</h1>
+        </div>
+        <div id="menu-bar">
+            <div id="humrger-btn">
+                <div id="bar1 " class="bar bar1"></div>
+                <div id="bar2 " class="bar bar2"></div>
+                <div id="bar3 " class="bar bar3"></div>
+            </div>
+            <div class="main-nav">
+                <ul class="nav" id="nav">
+                    <li><a href="/">My Favorite Books</a></li>
+                    <li><a href="/search">GOOGLE BOOKS</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="menu-bg" id="menu-bg"></div>
+
     </header>
     <main>
-        <form action="/searches" method="POST">
-            <input type="text" placeholder="Enter a title or author" name="search"><br />
+        <div class="main-header">
+            <h3>Search by Title or Author</h3>
+        </div>
+        <section id="book-form">
+            <form action="/searches" method="POST">
+                <input type="text" name="bookname" placeholder="Please enter a Title or author" id="book-info" >
+                <br>
+                <div class="inputs">
+               <label for="title" style="font-size: 20px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Title</label>
+               <input type="radio" name="myBook" value="title" >
+               </div>
+               <br>
+               <div class="inputs">
 
-            <input type="radio" name="type" id="" value="title">
-            <label for="title">Title</label><br />
-
-            <input type="radio" value="author" name="type">
-            <label for="author">Author</label><br />
-
-
-            <button type="submit">Search the Google Books API</button>
-        </form>
+               <label for="author"style="font-size: 20px;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Author</label>
+               <input type="radio" name="myBook" value="author">
+               </div>
+<div id="search-btn">
+    <button>Search For Your Book</button>
+</div>
+            </form>
+        </section>
     </main>
-
     <footer></footer>
-
-</body>
-
+            <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+            <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+            <script src="/app.js"></script>
+        </body>
 </html>
