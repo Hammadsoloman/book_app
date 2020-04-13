@@ -1,79 +1,59 @@
 'use strict';
-
-
 require('dotenv').config();
-
-//dependencies
 const express = require('express');
+
+const PORT = process.env.PORT || 5050;
+const app = express();
 const superagent = require('superagent');
 
-
-//PORT
-const PORT = process.env.PORT || 4000;
-
-//the App
-const app = express();
-
-//
 app.use(express.static('./public'));
 
-//
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-//
 app.set('view engine', 'ejs');
 
-
-//test route
-app.get('/hello', (request, response) => {
-    response.render('pages/index');
+app.get('/', (req, res) => {
+    res.render('pages/index');
+})
+app.get('/search', (req, res) => {
+    res.render('pages/searches/new.ejs')
 })
 
-//search route
-app.get('/new', (request, response) => {
-    response.render('pages/searches/new');
-})
-
-
-app.post('/searches', (request, response) => {
-    let url;
-    let mainSearch = request.body.search;
-    let radioChoose = request.body.type;
-  
-    if (radioChoose === 'title') {
-        url = `https://www.googleapis.com/books/v1/volumes?q=${mainSearch}`;
+app.post('/searches', (req, res) => {
+    var url;
+    if (req.body.myBook === 'title') {
+        url = `https://www.googleapis.com/books/v1/volumes?q=${req.body.bookname}&intitle:${req.body.bookname}`;
     }
-    else {
-        url = `https://www.googleapis.com/books/v1/volumes?q=inauthor:${mainSearch}`
-        console.log('author')
-    };
+    else if (req.body.myBook === 'author') {
+        url = `https://www.googleapis.com/books/v1/volumes?q=${req.body.bookname}&inauthor:${req.body.bookname}`;
+    }
 
-    console.log(url)
     superagent.get(url)
         .then(data => {
-            let myBooks = data.body.items.map(selectBook => {
-                return new Books(selectBook)
-            })
-
-            response.render('pages/searches/show', { book: myBooks });
+            let arr = data.body.items;
+            let books = arr.map(book => {
+                let bookitem = new Book(book);
+                console.log(book.length);
+                return bookitem;
+            });
+            res.render('pages/searches/show', { books: books })
         })
-})
+        .catch(error => {
+            res.render('pages/error');
+        });
+});
+function Book(book) {
+    this.title = book.volumeInfo.title;
+    this.smallThumbnail = book.volumeInfo.imageLinks.smallThumbnail;
+    this.authors = book.volumeInfo.authors;
+    this.description = book.volumeInfo.description;
 
-
-function Books(data) {
-    this.title = data.volumeInfo.title;
-    this.image = (data.volumeInfo.imageLinks && data.volumeInfo.imageLinks.thumbnail) || 'https://via.placeholder.com/250.png/DDD/000';
-    this.authors = (data.volumeInfo.authors && data.volumeInfo.authors[0]) || 'there is no name';
-    this.description = data.volumeInfo.description;
 }
-
-
-
-app.get('*', (request, response) => {
-    response.status(404).send('NOT FOUND');
+app.get('*', (req, res) => {
+    res.status(404).send('You have a error in writing the route');
 })
 
 app.listen(PORT, () => {
-    console.log(`listening on PORT ${PORT}`);
+    console.log(`Listening on PORT ${PORT}`)
 })
