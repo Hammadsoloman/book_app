@@ -1,7 +1,7 @@
 {
   "name": "book_app",
   "version": "1.0.0",
-  "description": "",
+  "description": "Number and name of feature: Feature 1",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -22,6 +22,7 @@
     "dotenv": "^8.2.0",
     "ejs": "^3.0.2",
     "express": "^4.17.1",
+    "pg": "^8.0.2",
     "superagent": "^5.2.2"
   }
 }

@@ -1,59 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('../layout/header'); -%>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>book-app</title>
-    <link rel="stylesheet" href="/styles/reset.css" type="text/css">
-    <link rel="stylesheet" href="/styles/base.css" type="text/css">
-    <link rel="stylesheet" href="/styles/theme.css" type="text/css">
-    <link rel="stylesheet" href="/styles/icons.css" type="text/css">
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css">
-    <link rel="stylesheet" href="/styles/modules.css" type="text/css">
-</head>
-
-<body>
-    <header>
-        <div id="logo">
-            <h1>My Library</h1>
-        </div>
-        <div id="menu-bar">
-            <div id="humrger-btn">
-                <div id="bar1 " class="bar bar1"></div>
-                <div id="bar2 " class="bar bar2"></div>
-                <div id="bar3 " class="bar bar3"></div>
-            </div>
-            <div class="main-nav">
-                <ul class="nav" id="nav">
-                    <li><a href="/">My Favorite Books</a></li>
-                    <li><a href="/search">GOOGLE BOOKS</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="menu-bg" id="menu-bg"></div>
-
-    </header>
-<div class="main-header">
-    <h5>Search Result</h5>
-</div>
-    <%books.forEach(val=>{%>
-        <div class="outer-box">
-        <div class="book-box">
-        <img id="book-img" src="<%=val.smallThumbnail%>">
-       
+    <div class="main-header">
+        <h5>Search Result</h5>
     </div>
-    <h2 id="booke-title"><%=val.title%></h2>
-    <h5 id="book-author"><%=val.authors%></h5>
-    <p id="book-description"><%=val.description%></p>
-</div>
-    <%})%>
-    <footer>
-            </footer>
-            <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
-            <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-            <script src="/app.js"></script>
-        
+        <%books.forEach(val=>{%>
+            <div class="outer-box">
+            <div class="book-box">
+            <img id="book-img" src="<%=val.smallThumbnail%>">
+           
+        </div>
+        <h2 id="booke-title"><%=val.title%></h2>
+        <h5 id="book-author"><%=val.authors%></h5>
+        <p id="book-description"><%=val.description%></p>
+       
+        <form action="/books" method="POST">
+            <input type="text" name="title" class="show-inputs"  value="<%=val.title%>">
+            <input type="text" name="author" class="show-inputs"  value="<%=val.authors%>">
+            <input type="text" name="isbn" class="show-inputs" class="show-inputs"  value="<%=val.isbn%>">
+            <input type="text" name="image_url" class="show-inputs"  value="<%=val.smallThumbnail%>">
+            <input type="text" name="description" class="show-inputs"  value="<%=val.description%>">
+            <button class="selected">Select the book</button>
+        </form>
+    </div>
+        <%})%>
+        <%- include('../layout/footer'); -%>
+    
+
 </body>
 
 </html>
