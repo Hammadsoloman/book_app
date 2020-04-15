@@ -5,7 +5,41 @@ header {
     justify-content: center;
     flex-wrap: wrap;
 }
+.bookimage
+    {
+        padding: 25px;
+    }
+    .button-box
+    {
+        border: 1px solid #000;
+    width: 50%;
+    background-color: #000;
+    padding: 10px;
+    margin: 3% auto;
+    transition: background-color 0.5s ease;
+    }
+    .button-box a
+    {
+        text-decoration: none;
+        color: #fff;
 
+
+    }
+    .book-description
+    {
+        text-align: center;
+        padding-top: 3%;
+    }
+    .button-box:hover
+    {
+        background-color: darkslategrey;
+        text-decoration: none;
+
+    }
+header h1
+{
+    padding: 2%;
+}
 #menu-bar {
     width: 12%;
     padding-top: 1%;
@@ -37,12 +71,53 @@ header {
     display: block;
     transition: 0.3s ease-in-out;
 }
+.update-input
+{
+    display: block;
+    margin: 5%;
+    width: 90%;
+    padding: 0.375rem .75rem;
+    font-size: 1rem;
+    line-height: 3;
+    color: #495057;
+    text-align: left;
+    background-color: #fff;
+    background-clip: padding-box;
+    margin-top: 28px;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    margin: 15px auto;
+}
 .nav
 {
     padding: 0;
     transition: 0.3s ease-in-out;
     display: none;
 }
+#update_form {
+    margin: 4% 28%;
+}
+.update-textarea
+{
+    float: left;
+ 
+    display: block;
+    margin: 5%;
+    width: 90%;
+    padding: 0.375rem .75rem;
+    font-size: 1rem;
+    line-height: 3;
+    color: #495057;
+    text-align: left;
+    background-color: #fff;
+    background-clip: padding-box;
+    margin-top: 28px;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    margin: 15px auto;
+}
+
+
 .nav li {
     padding: 18px 0px;
     text-align: center;
@@ -61,6 +136,66 @@ header {
     text-decoration: none;
 }
 
+.bar1 {
+    transform: translateY(-4px);
+    width: 40px;
+}
+.bar3
+{
+    transform: translateY(4px);
+}
+.change {
+    display: block;
+}
+.menu-bg
+{
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle,#e23a23,#e23a23 );
+    transition: 0.3s ease-in-out;
+}
+.main h2
+{
+    text-align: center;
+    font-size: 25px;
+    margin-top: 10px;
+}
+.save
+
+{
+    text-align: center; 
+     font-size: 25px;
+     margin-top: 10px;
+}
+
+.numOfBooks
+{
+    text-align: center;
+    padding-top: 12px;
+    font-size: 30px;
+    columns: #000000;
+}
+
+.change .bar
+{
+    height: 4px;
+}
+.change .bar1 {
+    transform: translateY(3px) rotate(-45deg);
+}
+.change .bar3
+{
+    transform: translateY(-6px) rotate(45deg);
+
+}
+.change  .bar2
+{
+    opacity: 0;
+}
+.change .bar
+{
+    height: 4px;
+}
 
 .main-header
 {
@@ -69,7 +204,6 @@ header {
     color: #ffffff;
     padding:  10px 0;
     font-size: 20px;
-    border-radius: 10px;
 }
 .display
 {
@@ -79,7 +213,7 @@ header {
 {
     text-align: center;
     margin-top: 8%;
-    animation:fadeIn 3s ;
+    animation: fadeIn 3s;
 }
 #book-info {
     display: inline-block;
@@ -107,17 +241,16 @@ header {
     border: 1px solid #ced4da;
     border-radius: .25rem;
     margin: 15px auto;
-    border-radius: 10px;
 }
 label {
     padding-right: 6%;
 }
-button
-{
+button {
     border: none;
     padding: 20px;
     width: 42%;
     cursor: pointer;
+    margin-top: 60px;
     text-align: center;
     background-color: #000;
     color: #fff;
@@ -125,14 +258,32 @@ button
 }
 
 footer {
-    margin-top: 38%;
+    margin-top: 5%;
     background-color: #000;
     height: 50px;
     display: flex;
     flex-wrap: wrap;
     flex-flow: row;
     justify-content: center;
-    
+}
+#social-media li {
+    display: inline-block;
+    padding: 13px 23px;
+    width: 15px;
+    margin-top: 5px;
+    height: 15px;
+    border: 1px solid #4a4a4a;
+    background-color: #4a4a4a;
+    border-radius: 50%;
+}
+#social-media  li a ion-icon
+{
+    color: red;
+ text-align: center;
+}
+#social-media ul
+{
+    list-style-type: none;
 }
 .book-box {
     border: 5px solid #fff;
@@ -177,31 +328,124 @@ footer {
     color: #fff;
     font-weight: bold;
 }
-
+.show-inputs{
+    display: none;
+}
 @media (min-width: 400px) and (max-width: 767px) {
   
-    #book-info {
-        width: 75%;
-       
+    
+    .bookimage
+    {
+        padding: 25px;
     }
+   
     .inputs
     {
         width: 75%;
 
     }
+    #book-info {
+        display: inline-block;
+        width: 76%;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        line-height: 3;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+    }
+    .book-description
+    {
+        text-align: center;
+        padding-top: 3%;
+
+    }
+    
+    #update_form
+{
+    margin: 4% 28%;
+}
+    footer {
+        margin-top: 40%;
+        background-color: #000;
+        height: 50px;
+        width: 100%;
+        position: fixed;
+        top: 236px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-flow: row;
+        justify-content: center;
+    }
     button {
         border: none;
-        padding: 10px;
-        margin-bottom: 20px;
-        width: 79%;
-        height: 50px;
+        padding: 20px;
+        width: 42%;
         cursor: pointer;
+        margin-top: 60px;
         text-align: center;
         background-color: #000;
         color: #fff;
         font-size: 19px;
     }
+    .show-inputs{
+        display: none;
+    }
+.bookimage
+    {
+        padding: 25px;
+    }
+    .update-input
+{
+    display: block;
+    margin: 5%;
+    width: 90%;
+    padding: 0.375rem .75rem;
+    font-size: 1rem;
+    line-height: 3;
+    color: #495057;
+    text-align: left;
+    background-color: #fff;
+    background-clip: padding-box;
+    margin-top: 28px;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    margin: 15px auto;
+}
+    .button-box
+    {
+        border: 1px solid #000;
+    width: 50%;
+    background-color: #000;
+    padding: 10px;
+    margin: 3% auto;
+    transition: background-color 0.5s ease;
+    }
+    .button-box a
+    {
+        text-decoration: none;
+        color: #fff;
+
+
+    }
+    .button-box:hover
+    {
+        background-color: darkslategrey;
+        text-decoration: none;
+
+    }
+    .main h2
+    {
+        text-align: center;
+    font-size: 25px;
+    margin-top: 10px;
+    }
+.selected
+
+{
+    margin-top: 2%;
+}
 
   }
-
-  

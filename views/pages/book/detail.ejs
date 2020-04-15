@@ -1,0 +1,45 @@
+<%- include('../layout/header'); -%>
+    
+<div class="main-header">
+    <h5>Search Result</h5>
+</div>
+  
+        <div class="outer-box">
+        <div class="book-box">
+        <img id="book-img" src="<%=details.image_url%>">
+       
+    </div>
+    <h2 id="booke-title"><%=details.title%></h2>
+    <h5 id="book-author"><%=details.author%></h5>
+    <p class="book-description"><%=details.isbn %></p>
+    <p class="book-description"><%=details.description%></p>
+    <p class="book-description"><%=details.id%></p>
+
+
+    <form action="/delete/<%=details.id%>?_method=delete" method="post">
+        <button type="submit">Delete</button>
+        </form>
+        <button id="update_btn">Update</button>
+        
+        <section id="update_form">
+        <form action="/update/<%=details.id%>?_method=put" method="post">
+        
+            <input type="text" class="update-input" name="title"   value="<%=details.title%>">
+            <input type="text"  class= "update-input" name="author" value="<%=details.author%>">
+            <input type="text" class="update-input" name="isbn"   value="<%=details.isbn%>">
+            <input type="text" class="update-input" name="image_url"   value="<%=details.image_url%>">
+            <input type="text" name="bookshelf" class="update-input" value="<%=details.bookshelf%>">
+            <textarea name="description" class="update-textarea" id="" cols="30" rows="10" ><%=details.description%></textarea>
+            <br>
+        <button type="submit">update</button>
+        
+            </form>
+        </section>
+</div>
+
+
+
+    <%- include('../layout/footer'); -%>
+    
+</body>
+</html>
