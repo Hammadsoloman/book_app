@@ -34,7 +34,7 @@ Estimate of time needed to complete: __2___
 
 
 
-Actual time needed to complete: ___3__
+Actual time needed to complete: ___2__
 
 ********************************
 Number and name of feature: feature 5
@@ -47,30 +47,26 @@ Actual time needed to complete: __2___
 
 
 ****************************************
-Number and name of feature: feature 6
-
-Estimate of time needed to complete: __1___
-
-
-
-Actual time needed to complete: ___1__
 
 
 
 # Project Name
 
 **Author**: Hammad
+
 **Version**: 1 (increment the patch/fix version number if you make more commits past your first submission)
+
+
 
 ## Overview
 <!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for a Code 301 class. (i.e. What's your problem domain?) -->
 
-**i finished first part of the project**
+**i finished second part of the project**
 
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
 
-**i disrpute my work in 6 steps**
+**i disrpute my work in 5 steps**
 
 ## Architecture
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
@@ -83,5 +79,5 @@ Actual time needed to complete: ___1__
 ## Credits and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 -->
-**first day of work**
+**second day of work**
 

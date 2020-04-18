@@ -9,18 +9,8 @@ header
 header h1
 {
     color: #ffffff;
-    text-align: center;
-}
-
-@keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
   
-    to {
-      opacity: 1;
-    }
-  }
+}
 
 
 #menu-bar {
@@ -45,3 +35,13 @@ header h1
 {
     opacity: 0;
 }
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+

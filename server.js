@@ -2,11 +2,15 @@
 require('dotenv').config();
 const express = require('express');
 const PORT = process.env.PORT || 5050;
+=======
+
 const app = express();
 const methodOverride = require('method-override');
 app.use(methodOverride('_method'));
 const superagent = require('superagent');
 const pg = require('pg');
+
+
 app.use(express.static('./public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -23,6 +27,7 @@ app.get('/index', (req, res) => {
         .then(results => {
             res.render('pages/index', { books: results.rows });
         })
+
 })
 
 app.get('/search', (req, res) => {
@@ -48,7 +53,7 @@ app.post('/searches', (req, res) => {
                 bookgallery.push(bookitem);
                 return bookitem;
             });
-            res.render('pages/searches/show', { books: books })
+            res.render('pages/searches/detail', { books: books })
         })
         .catch(error => {
             res.render('pages/error');
@@ -64,6 +69,7 @@ function getbookDetails(req, res) {
 
             res.render('pages/book/detail', { details: result.rows[0] });
         })
+
 }
 
 app.post('/books', insertDetails);
@@ -100,12 +106,24 @@ function deletebook(req, res) {
         .then(res.redirect('/'));
 }
 
+
+function insertDetails(req,res) {
+    let {title,author,isbn,image_url,description} = req.body;
+    let SQL = 'INSERT INTO books (title,author,isbn,image_url,description) VALUES ($1,$2,$3,$4,$5);';
+    let safeValues = [title,author,isbn,image_url,description];
+    return client.query(SQL,safeValues)
+    .then (()=>{
+        res.redirect('/index');
+    })
+        
+ }
 function Book(book) {
     this.title = book.volumeInfo.title;
     this.smallThumbnail = book.volumeInfo.imageLinks.smallThumbnail;
     this.authors = book.volumeInfo.authors;
     this.description = book.volumeInfo.description;
     this.isbn = book.volumeInfo.industryIdentifiers[0].type;
+    this.isbn=book.volumeInfo.industryIdentifiers[0].type;
 }
 app.get('*', (req, res) => {
     res.status(404).send('This route does not exist!!');
@@ -117,3 +135,4 @@ client.connect()
             console.log(`Listening on PORT ${PORT}`);
         })
     })
+

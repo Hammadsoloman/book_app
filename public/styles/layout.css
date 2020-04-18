@@ -160,6 +160,7 @@ header h1
     font-size: 25px;
     margin-top: 10px;
 }
+
 .save
 
 {
@@ -174,6 +175,7 @@ header h1
     padding-top: 12px;
     font-size: 30px;
     columns: #000000;
+
 }
 
 .change .bar
@@ -213,8 +215,8 @@ header h1
 {
     text-align: center;
     margin-top: 8%;
-    animation: fadeIn 3s;
-}
+    animation: fadeIn 4s;
+
 #book-info {
     display: inline-block;
     width: 40%;
@@ -338,6 +340,7 @@ footer {
     {
         padding: 25px;
     }
+ 
    
     .inputs
     {
@@ -356,6 +359,7 @@ footer {
         border: 1px solid #ced4da;
         border-radius: .25rem;
     }
+
     .book-description
     {
         text-align: center;
@@ -367,6 +371,7 @@ footer {
 {
     margin: 4% 28%;
 }
+
     footer {
         margin-top: 40%;
         background-color: #000;
@@ -414,6 +419,7 @@ footer {
     border-radius: .25rem;
     margin: 15px auto;
 }
+  
     .button-box
     {
         border: 1px solid #000;
@@ -448,4 +454,5 @@ footer {
     margin-top: 2%;
 }
 
-  }
+
+    

@@ -7,26 +7,26 @@
         <div class="outer-box">
         <div class="book-box">
         <img id="book-img" src="<%=val.smallThumbnail%>">
+         </div>
+        <h2 id="booke-title"><%=val.title%></h2>
+        <h5 id="book-author"><%=val.authors%></h5>
+        <p id="book-description"><%=val.description%></p>
+
        
+        <form action="/books" method="POST">
+            <input type="text" name="title" class="show-inputs"  value="<%=val.title%>">
+            <input type="text" name="author" class="show-inputs"  value="<%=val.authors%>">
+            <input type="text" name="isbn" class="show-inputs" class="show-inputs"  value="<%=val.isbn%>">
+            <input type="text" name="image_url" class="show-inputs"  value="<%=val.smallThumbnail%>">
+            <input type="text" name="description" class="show-inputs"  value="<%=val.description%>">
+            <button class="selected">Select the book</button>
+        </form>
     </div>
-    <h2 id="booke-title"><%=val.title%></h2>
-    <h5 id="book-author"><%=val.authors%></h5>
-    <p id="book-description"><%=val.description%></p>
-   
-    <form action="/books" method="POST">
-        <input type="text" name="title" class="show-inputs"  value="<%=val.title%>">
-        <input type="text" name="author" class="show-inputs"  value="<%=val.authors%>">
-        <input type="text" name="isbn" class="show-inputs" class="show-inputs"  value="<%=val.isbn%>">
-        <input type="text" name="image_url" class="show-inputs"  value="<%=val.smallThumbnail%>">
-        <input type="text" name="description" class="show-inputs"  value="<%=val.description%>">
-        <br>
-        <input type="text" name="bookshelf" class="update-input" placeholder="enter the bookshelf">
-        <button class="selected">Select the book</button>
-    </form>
-</div>
+
     <%})%>
     <%- include('../layout/footer'); -%>
 
+   
 </body>
 
 </html>
