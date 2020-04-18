@@ -1,17 +1,17 @@
 <%- include('../layout/header'); -%>
 
-    <div class="main-header">
-        <h5>Search Result</h5>
-    </div>
-        <%books.forEach(val=>{%>
-            <div class="outer-box">
-            <div class="book-box">
-            <img id="book-img" src="<%=val.smallThumbnail%>">
-           
-        </div>
+<div class="main-header">
+    <h5>Search Result</h5>
+</div>
+    <%books.forEach(val=>{%>
+        <div class="outer-box">
+        <div class="book-box">
+        <img id="book-img" src="<%=val.smallThumbnail%>">
+         </div>
         <h2 id="booke-title"><%=val.title%></h2>
         <h5 id="book-author"><%=val.authors%></h5>
         <p id="book-description"><%=val.description%></p>
+
        
         <form action="/books" method="POST">
             <input type="text" name="title" class="show-inputs"  value="<%=val.title%>">
@@ -22,10 +22,11 @@
             <button class="selected">Select the book</button>
         </form>
     </div>
-        <%})%>
-        <%- include('../layout/footer'); -%>
-    
 
+    <%})%>
+    <%- include('../layout/footer'); -%>
+
+   
 </body>
 
 </html>

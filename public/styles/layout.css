@@ -71,12 +71,53 @@ header h1
     display: block;
     transition: 0.3s ease-in-out;
 }
+.update-input
+{
+    display: block;
+    margin: 5%;
+    width: 90%;
+    padding: 0.375rem .75rem;
+    font-size: 1rem;
+    line-height: 3;
+    color: #495057;
+    text-align: left;
+    background-color: #fff;
+    background-clip: padding-box;
+    margin-top: 28px;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    margin: 15px auto;
+}
 .nav
 {
     padding: 0;
     transition: 0.3s ease-in-out;
     display: none;
 }
+#update_form {
+    margin: 4% 28%;
+}
+.update-textarea
+{
+    float: left;
+ 
+    display: block;
+    margin: 5%;
+    width: 90%;
+    padding: 0.375rem .75rem;
+    font-size: 1rem;
+    line-height: 3;
+    color: #495057;
+    text-align: left;
+    background-color: #fff;
+    background-clip: padding-box;
+    margin-top: 28px;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    margin: 15px auto;
+}
+
+
 .nav li {
     padding: 18px 0px;
     text-align: center;
@@ -120,7 +161,6 @@ header h1
     margin-top: 10px;
 }
 
-
 .save
 
 {
@@ -134,7 +174,8 @@ header h1
     text-align: center;
     padding-top: 12px;
     font-size: 30px;
-    color: rgb(10, 10, 10);
+    columns: #000000;
+
 }
 
 .change .bar
@@ -175,7 +216,7 @@ header h1
     text-align: center;
     margin-top: 8%;
     animation: fadeIn 4s;
-}
+
 #book-info {
     display: inline-block;
     width: 40%;
@@ -294,28 +335,45 @@ footer {
 }
 @media (min-width: 400px) and (max-width: 767px) {
   
-    #book-info {
-        width: 75%;
-       
-    }
+    
     .bookimage
     {
         padding: 25px;
     }
+ 
    
     .inputs
     {
         width: 75%;
 
     }
+    #book-info {
+        display: inline-block;
+        width: 76%;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        line-height: 3;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+    }
+
     .book-description
     {
         text-align: center;
         padding-top: 3%;
 
     }
+    
+    #update_form
+{
+    margin: 4% 28%;
+}
+
     footer {
-        margin-top: 5%;
+        margin-top: 40%;
         background-color: #000;
         height: 50px;
         width: 100%;
@@ -344,6 +402,24 @@ footer {
     {
         padding: 25px;
     }
+    .update-input
+{
+    display: block;
+    margin: 5%;
+    width: 90%;
+    padding: 0.375rem .75rem;
+    font-size: 1rem;
+    line-height: 3;
+    color: #495057;
+    text-align: left;
+    background-color: #fff;
+    background-clip: padding-box;
+    margin-top: 28px;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    margin: 15px auto;
+}
+  
     .button-box
     {
         border: 1px solid #000;
@@ -377,4 +453,6 @@ footer {
 {
     margin-top: 2%;
 }
-  }
+
+
+    

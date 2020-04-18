@@ -1,7 +1,6 @@
 <%- include('layout/header'); -%>
- 
-    
-    <style>
+<style>
+
     .booktitle
     {
         padding-bottom: 5%;
@@ -18,9 +17,11 @@
    
 </style>
     <main>
-        <h2 class="save" style="background-color: rgb(99, 96, 96); padding: 10px;" > Saved Books </h2>
+        <h2 class="save"> Saved Books </h2>
         <p class="numOfBooks"> <%= books.length%></p>
     
+        <p style="text-align: center;padding-top: 26px; font-size: 20px;">  </p><br>
+      
         <% books.forEach((book)=> { %>
             <div class="outer-box">
             <img class="bookimage" src="<%=book.image_url%>">
@@ -35,8 +36,8 @@
       </main>
     
     
-      <%- include('layout/footer'); -%>
+    <%- include('layout/footer'); -%>
+</body>
 
         
-        </body>
 </html>
